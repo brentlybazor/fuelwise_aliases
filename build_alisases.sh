@@ -20,6 +20,12 @@ ios-build () {
 
 
 movePackagesArchive () {
+    # TODO: These are the checks that need to be done
+    # 1. Check if the folder is already unzipped in the utils folder
+    # 2. Check if the file is in the Downloads folder
+    # 3. Move it to the utils folder if not there
+    # 4. Unzip package
+    
     #this file should be equal level to the project folder in files structure
     if [  ! -d ~/Downloads/packagesArchive ]
     then

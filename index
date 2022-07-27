@@ -1,0 +1,29 @@
+# cd ~
+
+# check the OS 
+
+unameOut="$(uname -s)"
+
+# OS is Mac
+if [[ "$unameOut" == *"Darwin"* ]]; then
+    myDir=$(dirname $0)
+fi
+
+# OS is Windows
+if [[ "$unameOut" == *"MING"* ]]; then
+    myDir="${BASH_SOURCE%/*}"
+fi
+
+source $myDir/variables.sh
+source $myDir/local.variables.sh
+
+__source_files () {
+    for file in $@
+    do
+        if [[ $file == *.sh ]]; then
+            source $file
+        fi
+    done
+}
+
+__source_files $myDir/*

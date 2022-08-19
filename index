@@ -17,8 +17,8 @@ if [[ "$unameOut" == *"MING"* ]]; then
 fi
 
 # add the variables to the system
-source $myDir/variables.sh
-source $myDir/local.variables.sh
+[[ -f $myDir/variables.sh ]] && source $myDir/variables.sh
+[[ -f $myDir/local.variables.sh ]] && source $myDir/local.variables.sh
 
 # source all the found .sh file automatically
 __source_files () {

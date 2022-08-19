@@ -4,7 +4,11 @@ unameOut="$(uname -s)"
 
 # OS is Mac
 if [[ "$unameOut" == *"Darwin"* ]]; then
-    myDir=$(dirname $0)
+    if [[ $(uname -m) == "arm64" ]]; then
+        myDir="${BASH_SOURCE%/*}"
+    else
+        myDir=$(dirname $0)
+    fi
 fi
 
 # OS is Windows

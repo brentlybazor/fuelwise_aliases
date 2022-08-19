@@ -1,20 +1,23 @@
 # CHECKOUT BRANCHES
 
+alias gcd="git checkout development"
+alias gcm="git checkout master"
+
 # checkout the feature branch
 # first param is the ticket number, second param is the '-b' incase you need to create a new branch
-gcf () {
+p-gcf () {
     git checkout ${2} "feature/FWV-${1}"
 }
 
 # checkout the release branch
 # first param is the ticket number, second param is the '-b' incase you need to create a new branch
-gcr () {
+p-gcr () {
     git checkout ${2} "release/${1}"
 }
 
 # checkout the bugfix branch``
 # first param is the ticket number, second param is the '-b' incase you need to create a new branch
-gcbf () {
+p-gcbf () {
     git checkout ${2} "bugfix/FWV-${1}"
 }
 

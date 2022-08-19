@@ -1,1 +1,1 @@
-alias pilot="cd ${pilotPath}/"
+alias pilotdir="cd ${pilotPath}/"
